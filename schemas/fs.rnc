@@ -1,0 +1,16 @@
+namespace fs = "http://www.28msec.com/cloud9/schemas/fs"
+
+start = (inode | file)
+
+inode = element fs:inode {
+  attribute uri { xsd:string },
+  attribute child { xsd:string },
+  attribute last-modified { xsd:dateTime },
+  attribute file { xsd:boolean },
+  attribute size { xsd:integer }
+}
+
+file = element fs:file {
+  attribute path { xsd:string },
+  xsd:base64Binary
+}

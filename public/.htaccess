@@ -1,0 +1,12 @@
+# Copyright 2010 28msec Inc.
+
+AddHandler fastcgi-script .fcgi
+Options +FollowSymLinks +ExecCGI
+
+RewriteEngine On
+
+RewriteRule ^$|^/$ /home/index [R=302,L]
+
+# if the requested path does not match a file, rewrite the URI and execute the fcgi script
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ /fcgi-bin/sausalito.fcgi [QSA,L,e=SAUSALITO_REQUEST_URI:/$1]

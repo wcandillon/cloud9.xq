@@ -1,0 +1,46 @@
+{
+  "author": {
+    "name": "Ajax.org B.V.",
+    "email": "info@ajax.org"
+  },
+  "contributors": [
+    {
+      "name": "Tim Caswell",
+      "email": "tim@c9.io"
+    }
+  ],
+  "name": "smith",
+  "description": "Smith is an RPC agent system for Node.JS used in architect and vfs.",
+  "version": "0.1.13",
+  "scripts": {
+    "test": "./test-all.sh"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/c9/smith/raw/master/LICENSE"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/c9/smith.git"
+  },
+  "main": "smith.js",
+  "engines": {
+    "node": ">=0.6.0"
+  },
+  "dependencies": {
+    "msgpack-js": "~0.1.0"
+  },
+  "_id": "smith@0.1.13",
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "_engineSupported": true,
+  "_npmVersion": "1.1.19",
+  "_nodeVersion": "v0.6.16",
+  "_defaultsLoaded": true,
+  "dist": {
+    "shasum": "ebbbff5ef6febfb30783d6b11ecb79c3c6843988"
+  },
+  "_from": "smith@https://github.com/c9/smith/tarball/packing-fix"
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.28msec.com/cloud9/schemas/fs" xmlns:fs="http://www.28msec.com/cloud9/schemas/fs">
+  <xs:element name="inode">
+    <xs:complexType>
+      <xs:attribute name="uri" use="required" type="xs:string"/>
+      <xs:attribute name="child" use="required" type="xs:string"/>
+      <xs:attribute name="last-modified" use="required" type="xs:dateTime"/>
+      <xs:attribute name="file" use="required" type="xs:boolean"/>
+      <xs:attribute name="size" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="file">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:base64Binary">
+          <xs:attribute name="path" use="required" type="xs:string"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

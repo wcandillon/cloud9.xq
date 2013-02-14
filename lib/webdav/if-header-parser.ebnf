@@ -1,0 +1,32 @@
+If         ::= (TaggedList+ | NoTaggedList+) eof
+NoTaggedList ::= List
+TaggedList ::= Resource List+
+Resource   ::= CodedURL
+List       ::= '(' ( 'Not'? (StateToken | "[" EntityTag "]") )+ ')'
+StateToken ::= CodedURL
+CodedURL   ::=  absoluteURI 
+EntityTag  ::= Weak? OpaqueTag
+Weak       ::= 'W/'
+OpaqueTag ::= string
+whitespace ::= whitespace^token /* ws: definition */
+
+
+<?TOKENS?>
+
+eof      ::= $
+absoluteURI ::= '<' [0-9A-Za-z\/\.\:\-]+ '>'
+string   ::= '"' ( anyUnicodeCharacterExceptQuoteOrBackslashOrControlCharacter | '\"' | '\\' | '\/' | '\b' | '\f' | '\n' | '\r' | '\t' | '\u' fourHexadecimalDigits )* '"'
+anyUnicodeCharacterExceptQuoteOrBackslashOrControlCharacter
+         ::= alphabet - ["#x005C]
+alphabet ::= #x0009
+           | #x000A
+           | #x000D
+           | [#x0020-#xD7FF]
+           | [#xE000-#xFFFD]
+           | [#x10000-#x10FFFF]
+hexadecimalDigit
+         ::= [0-9A-Fa-f]
+fourHexadecimalDigits
+         ::= hexadecimalDigit hexadecimalDigit hexadecimalDigit hexadecimalDigit
+whitespace
+         ::= [#x0009#x000A#x000D#x0020]+
